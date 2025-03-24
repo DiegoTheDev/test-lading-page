@@ -1,1 +1,28 @@
+body { 
+    margin: 0px;
+    height: 100vh;
+    background: var(--background-grad);
 
+    color: var(--text1);
+}
+
+header {
+    position: fixed;
+    left: 50%;
+    top: 1vh;
+    width: 98%;
+    height: 10vh;
+    transform: translate(-50%, 0);
+
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    align-self: center;
+
+    background: var(--topbar);
+
+    border-top-left-radius: 5vh;
+    border-top-right-radius: 5vh;
+}

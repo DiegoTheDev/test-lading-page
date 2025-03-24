@@ -1,0 +1,18 @@
+:root {
+    /* Colors - Light Mode */
+    --background: #1C1C1C;
+    --background2: #2C2C2C;
+    --background3: #3C3C3C;
+    --text1: #F5F5F5;
+    --text2: #A1A1A1;
+    --text3: #D1D1D1;
+    --highlight: #00FFFF;
+    --topbar: #0D0D0D;
+    --footer: #212121;
+
+    --background-grad: linear-gradient(135deg, #1C1C1C, #2C2C2C, #3C3C3C);
+  
+    /* Neon border and effects */
+    --neon-border: 2px solid #00FFFF;
+    --neon-box-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF, 0 0 30px #00FFFF;
+  }
