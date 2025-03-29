@@ -56,6 +56,13 @@ header h1:hover {
     border-bottom-left-radius: 5vh;
     border-bottom-right-radius: 5vh;
 }
+#coffee-cup{
+    width: 350px;
+    height: 350px;
+    display: flex;
+    position: absolute;
+    top: 26%;
+    left: 58%;
 
 .background footer {
     width: 100%;
