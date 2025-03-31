@@ -1,18 +1,18 @@
 :root {
-    /* Colors - Dark Mode */
-    --background: #0F0F0F;
-    --background2: #161616;
-    --background3: #1D1D1D;
-    --text1: #E0E0E0;
-    --text2: #9E9E9E;
-    --text3: #7F7F7F;
-    --highlight: #FF007F;
-    --topbar: #222222;
-    --footer: #111111;
+    /* Colors - Balanced Dark Mode */
+    --background: #1A1A2E;
+    --background2: #16213E;
+    --background3: #0F3460;
+    --text1: #FFFFFF;
+    --text2: #EAEAEA;
+    --text3: #B0B0B0;
+    --highlight: #FF4C8E;
+    --topbar: #23395D;
+    --footer: #112D4E;
 
-    --background-grad: linear-gradient(135deg, #0F0F0F, #161616, #1D1D1D);
+    --background-grad: linear-gradient(135deg, #1A1A2E, #16213E, #0F3460);
     
     /* Neon border and effects */
-    --neon-border: 2px solid #FF007F;
-    --neon-box-shadow: 0 0 15px #FF007F, 0 0 25px #FF007F, 0 0 35px #FF007F;
-  }
+    --neon-border: 2px solid #FF4C8E;
+    --neon-box-shadow: 0 0 10px #FF4C8E, 0 0 20px #FF4C8E, 0 0 30px #FF4C8E;
+}
