@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/light-mode.css">
+    <link id="pagestyle" rel="stylesheet" href="css/light-mode.css">
     <link rel="stylesheet" href="css/lading.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,14 +13,36 @@
 </head>
 <body>
     <header>
-        <img src="imgs/menu.png" alt="more-icon">
+        <img class="light-mode" src="imgs/menu-light.png" alt="more-icon">
+        <img class="dark-mode" src="imgs/menu-dark.png" alt="more-icon">
         <h1><a href="" style="text-decoration: none; color: var(--text1);">Café</a></h1>
         <img src="imgs/bean.png" alt="coffe-bean" style="rotate: 100deg;">
     </header>
     <div class="background">
         <img src="imgs/coffee-cup.png" alt="coffee-cup" id="coffee-cup">
-        <label><h2>Café</h2></label>
+        <h1>Café</h1>
         <p>Café é bao</p>
     </div>
+
+    <script>
+        function swapStyleSheet(sheet) {
+            document.getElementById("pagestyle").setAttribute("href", sheet);  
+        }
+
+        function update() {
+            let isDark = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (isDark) {
+                swapStyleSheet("css/dark-mode.css");
+            } else {
+                swapStyleSheet("css/light-mode.css");
+            }
+        }
+        update();
+
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            update();
+        });
+    </script>
 </body>
 </html>
