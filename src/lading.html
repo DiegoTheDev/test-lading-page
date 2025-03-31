@@ -13,36 +13,25 @@
 </head>
 <body>
     <header>
-        <img class="light-mode" src="imgs/menu-light.png" alt="more-icon">
-        <img class="dark-mode" src="imgs/menu-dark.png" alt="more-icon">
+        <img class="light-mode hover" src="imgs/menu-light.png" alt="more-icon">
+        <img class="dark-mode hover" src="imgs/menu-dark.png" alt="more-icon">
         <h1><a href="" style="text-decoration: none; color: var(--text1);">Café</a></h1>
         <img src="imgs/bean.png" alt="coffe-bean" style="rotate: 100deg;">
     </header>
     <div class="background">
         <img src="imgs/coffee-cup.png" alt="coffee-cup" id="coffee-cup">
-        <h1>Café</h1>
-        <p>Café é bao</p>
+        <div class="focus">
+            <h1 id="tittle">Café</h1>
+            <p id="desc">Café é bao</p>
+        </div>
+        <h2 id="price">Preço Médio: <br><b>?</b></h2>
+    </div>
+    <div class="arrows">
+        <img class="light-mode hover" src="imgs/arrow-light.png" alt="more-icon">
+        <img class="dark-mode hover" src="imgs/arrow-dark.png" alt="more-icon">
     </div>
 
-    <script>
-        function swapStyleSheet(sheet) {
-            document.getElementById("pagestyle").setAttribute("href", sheet);  
-        }
-
-        function update() {
-            let isDark = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
-
-            if (isDark) {
-                swapStyleSheet("css/dark-mode.css");
-            } else {
-                swapStyleSheet("css/light-mode.css");
-            }
-        }
-        update();
-
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-            update();
-        });
-    </script>
+    <script src="scheme.js"></script>
+    <script src="landing.js"></script>
 </body>
 </html>

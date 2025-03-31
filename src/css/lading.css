@@ -34,7 +34,10 @@ header img {
 
     margin-left: 5vh;
     margin-right: 5vh;
+
+    transition: ease-in-out 0.3s;
 }
+
 
 header h1 {
     transition: 0.1s ease-in-out;
@@ -45,7 +48,7 @@ header h1:hover {
 }
 
 .background {
-    background: var(--background);
+    background-image: var(--background-radial);
 
     position: fixed;
     left: 50%;
@@ -59,28 +62,104 @@ header h1:hover {
 }
 
 #coffee-cup {
-    width: 350px;
-    height: 350px;
+    width: 40vh;
+    height: 40vh;
     display: flex;
+
+    transform: translate(-50%, -50%);
     position: absolute;
-    top: 15vh; 
-    right: 40vh;
+    top: 30vh; 
+    right: 0vw;
+
+    opacity: 0;
+    animation: fadeIn2 ease-in-out 0.5s forwards;
+    animation-delay: 0.4s;
+
+    transition: ease-in-out 0.3s;
 }
 
-.background h1 {
-    font-size: 10vh;
+#coffee-cup:hover { 
+    scale: 1.04;
+}
+
+.hover {
+    transition: ease-in-out 0.3s;
+    cursor: pointer;
+}
+
+.hover:hover { 
+    scale: 1.2;
+}
+
+.background #price { 
+    font-size: 4vh;
+    font-weight: 200;
+    text-align: center;
+
+    color: var(--text2);
+
+    position: absolute;
+    transform: translate(-50%, -50%);
+    right: 7vw;
+    top: 55vh;
+
+    opacity: 0;
+    animation: fadeIn2 ease-in-out 0.5s forwards;
+    animation-delay: 0.4s;
+}
+
+.focus {
+    width: 50vw;
+    height: 40vh;
+    z-index: 0;
+
     margin: 0;
-    margin-top: 15vh;
-    margin-left: 5vh;
+    margin-left: 1vh;
+    margin-top: 20vh;
+
+    padding: 0;
+    padding-left: 1vh;
+
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.9px);
+    -webkit-backdrop-filter: blur(7.9px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+
+    opacity: 0;
+    animation: fadeIn ease-in-out 0.5s forwards;
+    animation-delay: 0.1s;
 }
 
-.background p { 
+.focus h1 {
+    font-size: 7vh;
+    margin: 0;
+    z-index: 1;
+
+    opacity: 0;
+    animation: fadeIn ease-in-out 0.4s forwards;
+    animation-delay: 0.2s;
+}   
+
+.focus p { 
     font-size: 2vh;
     margin: 0;
-    margin-left: 4vh;
-    margin-top: 1vh;
+    z-index: 1;
 
     color: var(--text3);
+    padding: 0;
+    padding-right: 2vh;
+
+    opacity: 0;
+    animation: fadeIn ease-in-out 0.4s forwards;
+    animation-delay: 0.3s;
+}
+
+.arrows {
+    position: absolute;
+    z-index: 2;
 }
 
 .dark-mode {
@@ -93,5 +172,25 @@ header h1:hover {
     }
     .light-mode {
         display: none;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px); /* Começa um pouco abaixo */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn2 {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }

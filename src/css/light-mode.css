@@ -11,6 +11,7 @@
     --footer: #B0C4DE;
 
     --background-grad: linear-gradient(135deg, #7eb9df, #B0D0E5, #90B8D5);
+    --background-radial: radial-gradient(circle, #8bafce 0%, #7ea9e2 100%);
   
     /* Neon border and effects */
     --neon-border: 2px solid #0099CC;
