@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/dark-mode.css">
+    <link id="pagestyle" rel="stylesheet" href="css/light-mode.css">
     <link rel="stylesheet" href="css/lading.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,14 +13,35 @@
 </head>
 <body>
     <header>
-        <img src="imgs/menu.png" alt="more-icon">
+        <img src="imgs/bean.png" alt="coffe-bean" style="rotate: 100deg;">
         <h1><a href="" style="text-decoration: none; color: var(--text1);">Café</a></h1>
         <img src="imgs/bean.png" alt="coffe-bean" style="rotate: 100deg;">
     </header>
     <div class="background">
-        <img src="imgs/coffee-cup.png" alt="coffee-cup" id="coffee-cup">
-        <label id="bao"><h2>Café</h2></label>
-        <p class="text1">Café é bao</p>
+        <img src="imgs/hand-drawn-coffee-concept-background-free-vector.jpg" class="back-img">
+        <div class="infos">
+            <div class="focus">
+                <h1 id="tittle">Café</h1>
+                <p id="desc">Café é bao</p>
+            </div>
+            <div class="arrows">
+                <img onclick="previus();" class="hover" src="imgs/arrow-dark.png" alt="more-icon" style="rotate: 180deg;">
+        
+                <div id="lights">
+                    
+                </div>
+        
+                <img onclick="next();" class="hover" src="imgs/arrow-dark.png" alt="more-icon">
+            </div>
+        </div>
+        <div class="coffee">
+            <img src="imgs/coffee-cup.png" alt="coffee-cup" id="coffee-cup">
+            <h2 id="price">Preço Médio: <br><b>?</b></h2>
+        </div>
     </div>
+    
+
+    <script src="scheme.js"></script>
+    <script src="landing.js"></script>
 </body>
 </html>
