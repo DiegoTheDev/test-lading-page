@@ -7,6 +7,10 @@ body {
     color: var(--text1);
 }
 
+h2 {
+    margin: 2vh 0;
+}
+
 header {
     position: fixed;
     left: 50%;
@@ -26,6 +30,8 @@ header {
 
     border-top-left-radius: 5vh;
     border-top-right-radius: 5vh;
+
+    z-index: 4;
 }
 
 header img {
@@ -59,6 +65,12 @@ header h1:hover {
 
     border-bottom-left-radius: 5vh;
     border-bottom-right-radius: 5vh;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    align-content: center;
 }
 
 .background .back-img {
@@ -79,22 +91,13 @@ header h1:hover {
     height: 40vh;
     display: flex;
 
-    transform: translate(-50%, -50%);
-    position: absolute;
-    top: 30vh; 
-    right: 0vw;
-
     opacity: 0;
     animation: fadeIn2 ease-in-out 0.5s forwards;
     animation-delay: 0.4s;
 
     transition: ease-in-out 0.3s;
 }
-
-#coffee-cup:hover { 
-    scale: 1.04;
-}
-
+      
 .hover {
     transition: ease-in-out 0.3s;
     cursor: pointer;
@@ -104,21 +107,36 @@ header h1:hover {
     scale: 1.2;
 }
 
-.background #price { 
+.background .coffee {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-right: 5vw;
+}
+
+#price { 
     font-size: 4vh;
     font-weight: 200;
     text-align: center;
 
     color: var(--text2);
 
-    position: absolute;
-    transform: translate(-50%, -50%);
-    right: 7vw;
-    top: 55vh;
-
     opacity: 0;
     animation: fadeIn2 ease-in-out 0.5s forwards;
     animation-delay: 0.4s;
+}
+
+.background .infos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    margin: 0;
+    margin-left: 1vw;
 }
 
 .focus {
@@ -127,11 +145,8 @@ header h1:hover {
     z-index: 0;
 
     margin: 0;
-    margin-left: 1vh;
-    margin-top: 20vh;
 
-    padding: 0;
-    padding-left: 1vh;
+    padding: 0 1vw;
 
     /* From https://css.glass */
     background: rgba(255, 255, 255, 0.08);
@@ -171,8 +186,76 @@ header h1:hover {
 }
 
 .arrows {
-    position: absolute;
     z-index: 2;
+
+    width: 25vw;
+    height: 5vh;
+    z-index: 0;
+
+    margin: 0;
+    margin-top: 1vh;
+
+    padding: 0;
+
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 5px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.9px);
+    -webkit-backdrop-filter: blur(7.9px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+
+    opacity: 0;
+    animation: fadeIn ease-in-out 0.5s forwards;
+    animation-delay: 0.15s;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.arrows div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;    
+}
+
+.arrows #lights div {
+    width: 2.5vh;
+    height: 2.5vh;
+
+    background-color: rgba(255,255,255, 0.2);
+
+    border: solid;
+    border-radius: 100%;
+    border-color: rgba(255, 255, 255, 0.6);
+    border-width: 1px;
+
+    margin: 0 0.5vh;
+    cursor: pointer;
+    margin: 0 0.5vh;
+
+    transition: 0.1s ease-in-out;
+}
+
+.arrows #lights div:hover {
+    scale: 1.05;
+}
+
+.arrows #lights .lit {
+    scale: 1.1;
+    background-color: rgba(255,255,255, 0.8);
+}
+
+.arrows img {
+    width: 2.5vh;
+    height: 2.5vh;
+
+    margin: 0 1vh;
 }
 
 .dark-mode {
@@ -190,6 +273,73 @@ header h1:hover {
     .focus {
         border: 1px solid rgba(255, 255, 255, 0.1);
     }
+    .arrows {
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+}
+
+@media (max-width: 1100px) {
+    .background {
+        flex-direction: column-reverse;
+        position: absolute;
+        left: 50%;
+        top: 10vh;
+        width: 98%;
+        height: auto;
+        transform: translate(-50%, 0);
+
+        padding: 5vh 0;
+
+        margin: 0;
+        margin-bottom: 4vh;
+    }
+
+    .infos {
+        width: 100%;
+    }
+
+    .focus {
+        width: 94%;
+    }
+
+    .arrows {
+        width: 80%;
+    }
+
+    .background .coffee {
+        margin: 0;
+        width: 100%;
+    }
+
+    header img {
+        display:  none;
+    }
+
+    header {
+        flex-direction: column;
+    }
+
+    header {
+        flex-direction: column;
+    }
+
+    .background .infos .focus h1 {
+        font-size: 5vh;
+    }
+
+    .background .coffee {
+        width: 90%;
+        height: 55vh;
+
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 5px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(7.9px);
+        -webkit-backdrop-filter: blur(7.9px);
+        border: 1px solid rgba(255, 255, 255, 0.6);
+
+        margin-bottom: 2vh;
+    }
 }
 
 @keyframes fadeIn {
@@ -206,8 +356,10 @@ header h1:hover {
 @keyframes fadeIn2 {
     from {
         opacity: 0;
+        scale: 0.9;
     }
     to {
         opacity: 1;
+        scale: 1;
     }
 }
