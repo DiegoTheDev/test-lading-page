@@ -110,7 +110,7 @@ function previus() {
 function loop() {
     setTimeout(() => {
         slider_lasttime++;
-        if (slider_lasttime >= 10) {
+        if (slider_lasttime >= 15) {
             next();
         }
         loop();
