@@ -37,7 +37,7 @@ let infos = [
         "tittle": "Café Descafeinado",
         "desc": "Uma excelente opção para quem deseja saborear café sem a cafeína.<br> Mantém o aroma e o sabor característico do café, mas sem os efeitos estimulantes.<br> Indicado para consumo noturno ou para pessoas sensíveis à cafeína.",
         "price": "$9,50",
-        "img": "imgs/esp.webp"
+        "img": "imgs/des.webp"
     }
 ]
 
