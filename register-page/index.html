@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar</title>
+    <link rel="stylesheet" type="text/css" href="index.css" media="screen">
+    <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
+                
+</head>
+<body>
+    <img src="https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg" alt="Facebook">
+    <div class="field">
+        <h1 id="tittle">Criar conta</h1>
+        <h3 id="sub-tittle">É rapido e fácil.</h3>
+        <form>
+            <section class="name">
+                <input type="text" id="name" name="nome" placeholder="Nome" required>
+                <input type="text" id="second-name" name="sobrenome" placeholder="Sobrenome" required>
+            </section>
+            <label for="Data de nascimento:">Data de nascimento:</label>
+            <section class="date">
+                <input type="date" id="date" name="Data de nascimento" required>
+            </section>
+            <label for="Genêro:">Genêro:</label>
+            <section id="gender">
+                <div class="option">
+                    <input type="radio" name="gender" id="fem">
+                    <label for="Feminino">Feminino</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="gender" id="mas">
+                    <label for="Masculino">Masculino</label>
+                </div>  
+                <div class="option">
+                    <input type="radio" name="gender" id="pers">
+                    <label for="Personalizado">Personalizado</label>
+                </div>
+            </section>
+            <section class="raw">
+                <input class="raw-input" type="text" name="email/telefone" id="email" placeholder="Email ou telefone">
+                <input class="raw-input" type="text" name="senha" id="password" placeholder="Nova senha">
+            </section>
+            <p>
+                As pessoas que usam nosso serviço podem ter carregado suas informações de contato no Facebook. Saiba mais.
+                <br><br>    
+                Ao clicar em Cadastre-se, você concorda com nossos Termos, Política de Privacidade e Política de Cookies. Você poderá receber notificações por SMS e cancelar isso quando quiser.
+            </p>
+            <button type="submit">Cadastre-se</button>
+        </form>
+    </div>
+</body>
+</html>
