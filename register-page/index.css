@@ -47,6 +47,7 @@ p {
 input {
     height: 35px;
 
+    padding: 0;
     padding-left: 4px;
 
     border: solid;
@@ -113,6 +114,21 @@ section {
     text-align: center;
 }
 
+.date select {
+    background-color: white;
+
+    text-align: left;
+    height: 40px;
+
+    padding: 0;
+
+    border: solid;
+    border-color: #aaa;
+    border-width: 1px;
+    border-radius: 5px;
+    width: 32%;
+}
+
 #gender .option {
     display: flex;
     flex-direction: row;
@@ -146,4 +162,41 @@ section {
 .raw-input {
     width: 100%;
     margin-bottom: 8px;
+}
+
+form p {
+    color: #777;
+    font-size: 11px;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+
+    width: 100% ;
+}
+
+.bottom button {
+    background-color: #00a400;
+    color: white;
+    border: none;
+    border-radius: 10px;
+
+    height: 36px;
+    padding: 0 32px;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    margin-bottom: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.bottom a {
+    color: #1877f2;
+    cursor: pointer;
 }
