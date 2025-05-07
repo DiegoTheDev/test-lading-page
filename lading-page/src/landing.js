@@ -1,7 +1,8 @@
 let current = 0;
-let lights_div = document.getElementById("lights");
-let slider_lasttime = 0;
+let lights_div = document.getElementById("lights"); // Div que contem as luzes(do navegador)
+let slider_lasttime = 0; // Timer do nevegador.
 
+// Metadados dos café.
 let infos = [
     {
         "tittle": "Café Tradicional",
@@ -41,24 +42,31 @@ let infos = [
     }
 ]
 
-
+// Atualiza as informações de acordo com seu index.
 function setText(index) {
     slider_lasttime = 0;
 
+    // Atualiza a imagem e reseta a animação de fade-in.
     let img = document.getElementById("coffee-cup");
     img.src = infos[index].img;
     img.style.display = "none";
 
+    // Atualiza o titulo e reseta a animação de fade-in.
     let tittle = document.getElementById("tittle");
     tittle.innerHTML = infos[index].tittle;
     tittle.style.display = "none";
+
+    // Atualiza a descrição/informações e reseta a animação de fade-in.
     let desc = document.getElementById("desc");
     desc.innerHTML = infos[index].desc;
     desc.style.display = "none";
+
+    // Atualiza o preço e reseta a animação de fade-in.
     let price = document.getElementById("price");
     price.innerHTML = "Preço Médio: <br><b>"+infos[index].price+"</b>";
     price.style.display = "none";
 
+    // Da um tempo para considerar as animações e atualizalas.
     setTimeout(() => {
         tittle.style.display = "block";
         desc.style.display = "block";
@@ -66,29 +74,37 @@ function setText(index) {
         img.style.display = "block";
     }, 1);
 
+    // Desliga as luzes.
     Array.from(lights_div.children).forEach(element => {
         element.classList.remove("lit");
     });
 
+    // Liga a luz atual.
     document.getElementById(`item-${index}`).classList.add("lit");
     current = index;
 }
 
-let item_index = 0;
+let item_index = 0; // Manter registro do id para o loop.
+
+// Cria o elemento da luz, para cada metadado.
 infos.forEach(element => {
-    let light = document.createElement("div");
-    light.id = `item-${item_index}`;
-    let temp = item_index;
+    let light = document.createElement("div"); // Cria o elemento.
+
+    light.id = `item-${item_index}`; // Coloca seu id junto com seu index. (item-id)
+
+    // Cria uma outra variavel por causa do evento.
+    let temp = item_index;  // o item_index é alterado após todos serem renderizados.
     light.onclick = () => {
-        setText(temp);
+        setText(temp); // Atualiza o texto.
     };
-    lights_div.appendChild(light);
+    lights_div.appendChild(light); // Adiciona para a div das luzes.
 
     item_index++;
 });
 
-setText(0);
+setText(0); // Carrega os dados iniciais.
 
+// Troca para o proximo café, caso está no fim ele repete.
 function next() {
     current++;
     if (current >= infos.length) {
@@ -98,6 +114,7 @@ function next() {
     setText(current);
 }
 
+// Troca para o anterior café, caso está no fim ele repete.
 function previus() {
     current--;
     if (current < 0) {
@@ -107,6 +124,7 @@ function previus() {
     setText(current);
 }
 
+// Loop onde ele troca o café de 15 em 15 segundos.
 function loop() {
     setTimeout(() => {
         slider_lasttime++;
@@ -117,4 +135,4 @@ function loop() {
     }, 1000);
 }
 
-loop();
+loop(); // Inicia o loop.
