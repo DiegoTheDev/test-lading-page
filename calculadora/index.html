@@ -8,25 +8,30 @@
 </head>
 <body>
     <div class="calculator-body">
+        <!-- Shitty ass visor -->
         <div class="top">
             <input id="output" type="text" disabled>
         </div>
         <div class="buttons">
+            <!-- stupid 1° row -->
             <button id="1" >1</button>
             <button id="2" >2</button>
             <button id="3" >3</button>
             <button id="/"  class="black-box">/</button>
+            <!-- stupid 2° row -->
             <button id="4" >4</button>
             <button id="5" >5</button>
             <button id="6" >6</button>
             <button id="x"  class="black-box">x</button>
+            <!-- stupid 3° row -->
             <button id="7" >7</button>
             <button id="8" >8</button>
             <button id="9" >9</button>
             <button id="-"  class="black-box">-</button>
+            <!-- stupid 4° row -->
             <button id="erease"><img src="erease.png"></img></button>
             <button id="0" >0</button>
-            <button id="=" >=</button>
+            <button id="=" onclick="calculate()">=</button>
             <button id="+"  class="black-box">+</button>
         </div>
     </div>
