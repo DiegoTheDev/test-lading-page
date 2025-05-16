@@ -1,6 +1,8 @@
 // The unprocessed math.
 var input = "";
 
+input.addEventListener
+
 // Bind the buttons using their id.
 function bind(id) {
     console.log(`Binding ${id}.`); // Debug reasons.
@@ -40,7 +42,7 @@ function calculate() {
     for (let i = 0; i <= string.length; i++) {
         let currentChar = string.charAt(i);
 
-        if ("+-x/".includes(currentChar) || i === string.length) {
+        if ("+-x/".includes(currentChar) || i === string.length) { // Check for operation char
             if (currentValue === "") continue; // ignore empty numbers
 
             let number = Number(currentValue);
