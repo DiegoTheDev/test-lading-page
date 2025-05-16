@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playwrite+DK+Loopet:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ancizar+Sans:ital,wght@0,100..1000;1,100..1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 
 body {
@@ -12,26 +12,55 @@ body {
     justify-content: center;
     align-items: center;
     align-content: center;
+    flex-flow: column nowrap;
     
-    background: url('background.jpg');
+    background: url('background.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
 
-    font-family: "Playwrite DK Loopet", cursive;
     object-fit: cover;
+}
+
+.welcome {
+    position: absolute;
+    top: 3vh;
+    width: 90%;
+    height: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-flow: column nowrap;
+
+    /* From https://css.glass */
+    background: rgba(2  00, 200, 200, 0.1);
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    backdrop-filter: blur(10.9px);
+    -webkit-backdrop-filter: blur(3.9px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    
+    color: white;
+    font-family: "Ancizar Sans", sans-serif;
+    font-size: 1.2em;
+}
+
+.welcome h1 {
+    margin: 0.6vh 0;
 }
 
 .calculator-body {
     width: 40vh;
-    height: 48vh;
+    height: 56vh;
 
    /* From https://css.glass */
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(2  00, 200, 200, 0.1);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(3.9px);
+    backdrop-filter: blur(10.9px);
     -webkit-backdrop-filter: blur(3.9px);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 
     display: flex;
     align-items: center;
@@ -53,9 +82,9 @@ body {
 
 .top input {
     /* From https://css.glass */
-    background: rgba(17, 17, 17, 0.9);
+    background: rgba(17, 17, 17, 0.99);
     border-radius: 10px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
     backdrop-filter: blur(18.3px);
     -webkit-backdrop-filter: blur(18.3px);
     border: 1px solid rgba(0, 0, 0, 0);
@@ -66,10 +95,10 @@ body {
     color: white;
 
     text-align: center;
-    font-size: 1.8em;
+    font-size: 2em;
     text-wrap: wrap;
 
-    font-family: "Playwrite DK Loopet", cursive;
+    font-family: "Ancizar Sans", sans-serif;
 }
 
 .buttons {
@@ -88,12 +117,12 @@ body {
     width: 8.1vh;
 
     /* From https://css.glass */
-    background: rgba(255, 106, 0, 0.87);
+    background: rgba(49, 104, 255, 0.87);
     border-radius: 10px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(3.8px);
     -webkit-backdrop-filter: blur(3.8px);
-    border: 1px solid rgba(255, 106, 0, 0.4);
+    border: 1px solid rgba(49, 104, 255, 0.4);
 
     color: white;
     font-size: 1.8em;
@@ -105,8 +134,18 @@ body {
     margin: 0.25vh 0.2vw;
 }
 
+.buttons button:hover {
+    /* From https://css.glass */
+    background: rgba(49, 104, 255, 0.87);
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3.8px);
+    -webkit-backdrop-filter: blur(3.8px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
 .buttons .black-box {
-    background: rgba(17, 17, 17, 0.7) !important;
+    background: rgba(17, 17, 17, 0.9) !important;
     border-radius: 10px !important;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3) !important;
     backdrop-filter: blur(18.3px) !important;
@@ -115,7 +154,7 @@ body {
 }
 
 .buttons .black-box:hover {
-    background: rgba(17, 17, 17, 0.9) !important;
+    background: rgba(17, 17, 17, 0.87) !important;
     border-radius: 12px !important;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5) !important;
     backdrop-filter: blur(18.3px) !important;
@@ -123,17 +162,26 @@ body {
     border: 1px solid rgba(255, 255, 255, 1) !important;
 }
 
-.buttons button:hover {
-    /* From https://css.glass */
-    background: rgba(153, 64, 0, 0.87);
-    border-radius: 12px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(3.8px);
-    -webkit-backdrop-filter: blur(3.8px);
-    border: 1px solid rgba(255, 255, 255, 0.8);
+#erease {
+    background: rgba(255, 0, 0, 0.7) !important;
+    border-radius: 10px !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3) !important;
+    backdrop-filter: blur(18.3px) !important;
+    -webkit-backdrop-filter: blur(18.3px) !important;
+    border: 1px solid rgba(255, 255, 255, 0) !important;
+    color: black;
 }
 
-#erease {
+#erease:hover {
+    background: rgba(255, 0, 0, 0.9) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(18.3px) !important;
+    -webkit-backdrop-filter: blur(18.3px) !important;
+    border: 1px solid rgba(255, 255, 255, 1) !important;
+}
+
+#erease {   
     display: flex;
     justify-content: center;
     align-items: center;
@@ -141,6 +189,43 @@ body {
 }
 
 #erease img {
-    width: 90%;
-    height: 80%;
+    width: 50%;
+    height: 50%;
+}
+
+#equals {
+    width: 96.5% !important;
+}
+
+@media (prefers-color-scheme: light) {
+    .buttons .black-box {
+        background: rgba(255, 255, 255, 0.7) !important;
+        border-radius: 10px !important;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3) !important;
+        backdrop-filter: blur(18.3px) !important;
+        -webkit-backdrop-filter: blur(18.3px) !important;
+        border: 1px solid rgba(255, 255, 255, 0) !important;
+        color: black;
+    }
+    
+    .buttons .black-box:hover {
+        background: rgba(255, 255, 255, 0.9) !important;
+        border-radius: 12px !important;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5) !important;
+        backdrop-filter: blur(18.3px) !important;
+        -webkit-backdrop-filter: blur(18.3px) !important;
+        border: 1px solid rgba(255, 255, 255, 1) !important;
+    }
+
+    .top input {
+        /* From https://css.glass */
+        background: rgba(243, 243, 243, 0.9);
+        border-radius: 10px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(18.3px);
+        -webkit-backdrop-filter: blur(18.3px);
+        border: 1px solid rgba(0, 0, 0, 0);
+    
+        color: black;
+    }
 }

@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
+    <div class="welcome">
+        <h1>Welcome to My Calculator.</h1>
+    </div>
+
     <div class="calculator-body">
         <!-- Shitty ass visor -->
         <div class="top">
@@ -29,10 +33,12 @@
             <button id="9" >9</button>
             <button id="-"  class="black-box">-</button>
             <!-- stupid 4° row -->
-            <button id="erease"><img src="erease.png"></img></button>
+            <button id="erease"><img src="delete.svg"></img></button>
             <button id="0" >0</button>
-            <button id="=" onclick="calculate()">=</button>
+            <button id=".">.</button>
             <button id="+"  class="black-box">+</button>
+            <!-- bottom line -->
+            <button id="equals" class="black-box" onclick="calculate()">=</button>
         </div>
     </div>
 

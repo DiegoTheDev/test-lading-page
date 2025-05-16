@@ -20,6 +20,7 @@ bind("/");
 bind("x");
 bind("-");
 bind("+");
+bind(".");
 
 // Ereasing bind.
 document.getElementById("erease").addEventListener("click", () => {
@@ -85,3 +86,5 @@ function calculate() {
 
     console.log(`Operation complete. -----------------------`);
 }
+
+document.getElementById("output").value = "00000";
