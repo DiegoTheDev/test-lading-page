@@ -24,7 +24,7 @@ body {
 .welcome {
     position: absolute;
     top: 3vh;
-    width: 90%;
+    width: 60%;
     height: auto;
 
     display: flex;
@@ -44,6 +44,9 @@ body {
     color: white;
     font-family: "Ancizar Sans", sans-serif;
     font-size: 1.2em;
+    animation: popFromTop 7s ease-in-out forwards;
+
+    padding: 1vh 3vw;
 }
 
 .welcome h1 {
@@ -228,4 +231,29 @@ body {
     
         color: black;
     }
+}
+
+@keyframes popFromTop {
+  0% {
+    top: -200px;
+    opacity: 0;
+  }
+  30% {
+    top: 3vh;
+    opacity: 1;
+  }
+  45% {
+    top: 3vh;
+  }
+  50% {
+    top: 3vh;
+  }
+  70% {
+    top: 3vh;
+    opacity: 1;
+  }
+  100% {
+    top: -200px;
+    opacity: 0;
+  }
 }
