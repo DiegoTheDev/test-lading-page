@@ -166,6 +166,10 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.8);
 }
 
+.buttons button:focus {
+    background: rgba(26, 40, 82, 0.87) !important;
+}
+
 .buttons .black-box {
     background: rgba(17, 17, 17, 0.9) !important;
     border-radius: 10px !important;
@@ -182,6 +186,10 @@ body {
     backdrop-filter: blur(18.3px) !important;
     -webkit-backdrop-filter: blur(18.3px) !important;
     border: 1px solid rgba(255, 255, 255, 1) !important;
+}
+
+.buttons .black-box:focus {
+    background: rgba(0, 0, 0, 0.87) !important;
 }
 
 #erease {
@@ -201,6 +209,10 @@ body {
     backdrop-filter: blur(18.3px) !important;
     -webkit-backdrop-filter: blur(18.3px) !important;
     border: 1px solid rgba(255, 255, 255, 1) !important;
+}
+
+#erease:focus {
+    background: rgba(139, 0, 0, 0.9) !important;
 }
 
 #erease {   
@@ -237,6 +249,10 @@ body {
         backdrop-filter: blur(18.3px) !important;
         -webkit-backdrop-filter: blur(18.3px) !important;
         border: 1px solid rgba(255, 255, 255, 1) !important;
+    }
+
+    .buttons .black-box:focus {
+        background: rgba(255, 255, 255, 0.87) !important;
     }
 
     .top input {

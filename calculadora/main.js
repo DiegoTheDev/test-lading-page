@@ -24,11 +24,13 @@ bind("-");
 bind("+");
 bind(".");
 
+
 // Ereasing bind.
-document.getElementById("erease").addEventListener("click", () => {
+function erease() {
     input = input.slice(0, input.length-1);
     document.getElementById("output").value = input;
-});
+}
+document.getElementById("erease").addEventListener("click", erease());
 
 // Calculate it :0
 function calculate() {
@@ -76,17 +78,55 @@ function calculate() {
         } else {
             currentValue += currentChar;
         }
-    }
+    }   
 
     input = "";
     if (lastValue !== null && !isNaN(lastValue)) {
         document.getElementById("output").value = lastValue;
-    } else {
-        
-        document.getElementById("output").value = "Operação inválida.";
-    }
-
+    } 
     console.log(`Operation complete. -----------------------`);
 }
 
-document.getElementById("output").value = "00000";
+function focusButton(id) {
+    const button = document.getElementById(id);
+    button.focus();
+}
+
+const regex = /(\d)|[x/+.-]/;
+document.getElementById("output").value = "";
+document.addEventListener('keydown', function(event) {
+    const key = event.key.toString().toLocaleLowerCase();
+    if ("*" === key) {
+        focusButton("x");
+        input = input+"x";
+        document.getElementById("output").value = input;
+        return;
+    }
+
+    if ("," === key) {
+        focusButton(".");
+        input = input+".";
+        document.getElementById("output").value = input;
+        return;
+    }
+
+    if ("Backspace" === event.key) {
+        focusButton("erease");
+        erease();
+        return; 
+    }
+    if ("Enter" === event.key) {
+        calculate();
+        focusButton("equals");
+        return; 
+    }
+
+    if (!regex.test(key)) { // Iguinores non-math inputs.
+        return;
+    }
+   
+    focusButton(key);
+
+    input = input+key;
+    document.getElementById("output").value = input;
+});
