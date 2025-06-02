@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalho 22/06/25: FrontEnd</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-wrapper">
+        <form method="dialog">
+            <label>Valor 1:</label>
+            <div class="input-wrapper">
+                <input id="inpt1" type="number" value="0" required>
+            </div>
+            <label>Valor 2:</label>
+            <div class="input-wrapper">
+                <input id="inpt2" type="number" value="0" required>
+            </div>
+
+            <div class="funcs-wrapper">
+                <button onclick="addElemts();" type="submit">+</button>
+                <button onclick="remElemts();" type="submit">-</button>
+                <button onclick="divElemts();" type="submit">/</button>
+                <button onclick="mulElemts();" type="submit">*</button>
+            </div>
+
+            <p id="output" class="hidden">O resultado: none</p>
+        </form>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
