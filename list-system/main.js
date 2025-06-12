@@ -26,6 +26,9 @@ document.querySelectorAll("button.item.folder").forEach(button => {
         button.querySelectorAll(".expand-icon").forEach(img => {
             img.classList.toggle("folded");
         })
+        button.querySelectorAll(".folder-icon").forEach(img => {
+            img.classList.toggle("expand");
+        })
 
         let state = button.getAttribute('folded');
         button.parentElement.classList.toggle("show");

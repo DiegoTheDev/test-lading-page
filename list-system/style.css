@@ -24,6 +24,11 @@ body {
     align-content: center;
     flex-flow: column nowrap;
     margin-left: 30px;
+    border-bottom: solid 1px light-dark(rgba(0,0,0,0.3), rgba(255,255,255,0.3)) !important;
+}
+
+.list:nth-child(even) .item:nth-child(1) {
+    background: light-dark(#eee, #222);
 }
 
 .list {
@@ -52,6 +57,7 @@ body {
     cursor: pointer;
     transition: 0.1s ease-in-out;
     position: relative;
+    border-bottom-color: rgba(0,0,0,0) !important;
 }
 
 .item:hover {
@@ -62,6 +68,11 @@ body {
 .item .folder-icon {
     margin-left: 1%;
     margin-right: 1.5%;
+    transition: 0.2s;
+}
+
+.item .folder-icon.expand {
+    transform: rotate(13deg);
 }
 
 .item.child {
@@ -88,6 +99,7 @@ body {
     right: 10px;
     top: 50%;
     transform: translate(-50%, -50%);
+    transition: 0.2s;
 }
 
 .item .expand-icon.folded {
