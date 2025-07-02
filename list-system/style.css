@@ -36,7 +36,7 @@ body {
 }
 
 .list:nth-child(even) .item:nth-child(1) {
-    background: light-dark(#eee, #222);
+    background: light-dark(#dfdfdf, #222);
 }
 
 .list {
@@ -164,3 +164,10 @@ body {
         display: block;
     }
 }
+
+@media (max-width: 720px) {
+    #window {
+        width: 80%; 
+        min-width: 201px;
+    }
+}   
