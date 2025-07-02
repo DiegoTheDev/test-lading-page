@@ -29,10 +29,16 @@ document.querySelectorAll("button.item.folder").forEach(button => {
         button.querySelectorAll(".folder-icon").forEach(img => {
             img.classList.toggle("expand");
         })
+        button.parentElement.querySelectorAll("button.item.child").forEach(item => {
+            if (item != button) {
+                item.classList.toggle("hidden");
+            } 
+        });
 
         let state = button.getAttribute('folded');
         button.parentElement.classList.toggle("show");
 
         button.setAttribute('folded', !state);
+
     });
 });
