@@ -5,7 +5,16 @@ function quest1() {
     var qnt = 17; // Quantidade de maçãs.
     var price = 0.5; // Preço das maçãs.
 
+<<<<<<< Updated upstream
     var total = qnt*price; // O valor total que ele ganha. 
+=======
+questions.push(function () {
+    const arr = [567,532,68,123];
+    arr.forEach(int => {
+        console.log(int);
+    });
+});
+>>>>>>> Stashed changes
 
     console.log(`1  | João ganhou ${total} com a venda das maçãs.`);
 }
@@ -17,6 +26,7 @@ function quest2() {
     var money = 200;
     money -= 75;
 
+<<<<<<< Updated upstream
     console.log(`2  | Sobrou ${money} do 200 após Maria gastar.`);
 }
 
@@ -178,3 +188,33 @@ quest12();
 quest13();
 quest14();
 quest15();
+=======
+questions.push(function () {
+    const arr = [3,4,1,6,8];
+    arr.splice(2,1);
+    console.log(`Questão 4: ${arr}`);
+});
+
+questions.push(function () {
+    const arr1 = [3,6,1];
+    const arr2 = [6,4,2];
+    const arr3 = arr1.concat(arr2);
+    console.log(`Questão 5: ${arr3}`);
+});
+
+questions.push(function () {
+    const arr = [1,3,5,8,4,3,6];
+    const rev = arr.reverse();
+    console.log(`Questão 6: ${rev}`);
+});
+
+questions.push(function () {
+    const arr = [1,3,5,8,4,3,6,8,2,8];
+    const sorted = arr.sort();
+    console.log(`Questão 7: ${sorted}`);
+});
+
+questions.forEach(func => {
+    func();
+}); 
+>>>>>>> Stashed changes
