@@ -30,7 +30,6 @@ function erease() {
     input = input.slice(0, input.length-1);
     document.getElementById("output").value = input;
 }
-document.getElementById("erease").addEventListener("click", erease());
 
 // Calculate it :0
 function calculate() {

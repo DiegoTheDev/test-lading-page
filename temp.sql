@@ -1,89 +1,100 @@
-Fornecedor (
-    Nome VARCHAR(40),
-    Telefone VARCHAR(10),
-    Email VARCHAR(100),
-    ID_Fornecedor INT PRIMARY KEY
-)
+CREATE TABLE fornecedor (
+  nome VARCHAR(50),
+  telefone VARCHAR(10),
+  email VARCHAR(100),
+  id_fornecedor INT PRIMARY KEY
+);
 
-Lote (
-    Quantidade INT,
-    Validade TIMESTAMP,
-    Data_Entrega TIMESTAMP,
-    ID_Estoque INT PRIMARY KEY
-        referencia Fornecedor   
-)
+CREATE TABLE lote (
+  quant INT,
+  validade TIMESTAMP,
+  dat_ent TIMESTAMP,
+  id_estoque INT PRIMARY KEY,
+  id_fornecedor INT,
+  FOREIGN KEY (id_fornecedor) 
+  	REFERENCES fornecedor(id_fornecedor)
+);
 
-Igrediente (
-    Nome VARCHAR(50),
-    Estoque INT,
-    ID_Estoque INT
-        referencia Lote,
-    ID_Igrediente INT PRIMARY KEY
-)
+CREATE TABLE ingrediente (
+  nome VARCHAR(50),
+  estoque INT,
+  id_ingrediente INT PRIMARY KEY,
+  id_estoque INT,
+  FOREIGN KEY (id_estoque) 
+  	REFERENCES lote(id_estoque)
+);
 
-Prato (
-    Nome VARCHAR(50),
-    Descricao VARCHAR(300),
-    Preco VARCHAR(5),
-    ID_prato INT PRIMARY KEY
-)
+CREATE TABLE prato (
+  nome VARCHAR(50),
+  descricao VARCHAR(300),
+  preco VARCHAR(5),
+  id_prato INT PRIMARY KEY
+);
 
-Prato_Igrediente (
-    ID_Prato INT
-        referencia Prato,
-    ID_Igrediente INT 
-        referencia Igrediente
-)
+CREATE TABLE prato_ingrediente (
+  id_prato INT,
+  id_ingrediente INT,
+  FOREIGN KEY (id_prato) 
+  	REFERENCES prato(id_prato),
+  FOREIGN KEY (id_ingrediente) 
+  	REFERENCES ingrediente(id_ingrediente)
+);
 
-Mesa (
-    ID_Mesa INT PRIMARY KEY
-)
+CREATE TABLE mesa (
+  id_mesa INT PRIMARY KEY
+);
 
-Categoria (
-    Nome VARCHAR(50),
-    Descricao VARCHAR(100),
-    ID_Categoria INT PRIMARY KEY
-)
+CREATE TABLE categoria (
+  nome VARCHAR(50),
+  descricao VARCHAR(100),
+  id_categoria INT PRIMARY KEY
+);
 
-Prato_Categoria (
-    ID_Prato INT
-        referencia Prato,
-    ID_Categoria INT
-        referencia Categoria
-)
+CREATE TABLE prato_categoria (
+  id_prato INT,
+  id_categoria INT,
+  FOREIGN KEY (id_prato) 
+  	REFERENCES prato(id_prato),
+  FOREIGN KEY (id_categoria) 
+  	REFERENCES categoria(id_categoria)
+);
 
+CREATE TABLE funcionario (
+  nome VARCHAR(50),
+  email VARCHAR(100),
+  cpf VARCHAR(20),
+  telefone VARCHAR(10),
+  cargo VARCHAR(30),
+  id_funcionario INT PRIMARY KEY
+);
 
-Funcionario (
-    Nome VARCHAR(50),
-    Email VARCHAR(100),
-    CPF VARCHAR(20),
-    Telefone VARCHAR(10),
-    Cargo VARCHAR(30),
-    ID_Funcionario INT PRIMARY KEY
-)
+CREATE TABLE cliente (
+  nome VARCHAR(50),
+  email VARCHAR(100),
+  telefone VARCHAR(10),
+  id_cliente INT PRIMARY KEY
+);
 
-Cliente (
-    Nome VARCHAR(50),
-    Email VARCHAR(100),
-    Telefone VARCHAR(10),
-    ID_cliente INT PRIMARY KEY
-)
+CREATE TABLE reserva (
+  estado VARCHAR(10),
+  horario TIMESTAMP,
+  pago BOOLEAN,
+  id_reserva INT PRIMARY KEY,
+  id_cliente INT,
+  id_mesa INT,
+  FOREIGN KEY (id_cliente) 
+  	REFERENCES cliente(id_cliente),
+  FOREIGN KEY (id_mesa) 
+  	REFERENCES mesa(id_mesa)
+);
 
-Reserva (
-    Estado VARCHAR(10),
-    Horario TIMESTAMP,
-    Pago BOOLEAN,
-    ID_Reserva INT PRIMARY KEY,
-    ID_Cliente INT
-        referencia Cliente
-    ID_Mesa INT
-        referencia Mesa
-)
-
-Pedido (
-    ID_Prato INT
-        referencia Prato,
-    Horario TIMESTAMP,
-    ID_Pedido INT PRIMARY KEY
-        referencia Reserva
-)
+CREATE TABLE pedido (
+  id_pedido INT PRIMARY KEY,
+  horario TIMESTAMP,
+  id_prato INT,
+  id_reserva INT,
+  FOREIGN KEY (id_prato) 
+  	REFERENCES prato(id_prato),
+  FOREIGN KEY (id_reserva) 
+  	REFERENCES reserva(id_reserva)
+);
