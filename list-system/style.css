@@ -13,6 +13,11 @@ body {
     background-color: light-dark(#ccc, #222);
 }
 
+h5 {
+    color: light-dark(#222, #ddd);
+    text-align: start;
+}
+
 #window {
     margin-top: 30px;
     width: 60%;
