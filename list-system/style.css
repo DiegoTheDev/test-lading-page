@@ -26,7 +26,8 @@ h5 {
     text-align: center;
     margin: 0;
     padding: 10px 0;
-    background-color: light-dark(rgba(0,0,0,0.1), rgba(0,0,0,0.1));
+    background-color: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.05));
+    z-index: 2;
 }
 
 #window {
@@ -163,6 +164,7 @@ h5 {
     bottom: 0px;
     width: 100%;
     cursor: pointer;
+    background-color: light-dark(rgba(0,0,0,0.1), rgba(0,0,0,0.1));
 }
 
 .version {
