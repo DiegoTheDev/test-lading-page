@@ -42,3 +42,21 @@ document.querySelectorAll("button.item.folder").forEach(button => {
 
     });
 });
+
+const main = document.getElementById("window");
+setTimeout(() => {
+    main.style.height = (main.children.length * 50)+"px";
+    main.style.opacity = 1;
+    setInterval(() => {
+        main.style.height = "auto";
+    }, 100)
+}, 200)
+
+const copy = document.querySelector(".copyrights");
+const ver = document.querySelector(".version");
+copy.addEventListener("mouseover", () => {
+    ver.classList.remove("hidden");
+});
+copy.addEventListener("mouseout", () => {
+    ver.classList.add("hidden");
+});
