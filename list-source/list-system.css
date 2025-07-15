@@ -1,0 +1,441 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+#main-window {
+    height: 80%;
+    width: 80%;
+    transition: 0.1s ease-in-out;
+    min-width: 100px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+#top-bar {
+    width: 100%;
+    height: 50px;
+}
+
+#top-bar h2 {
+    margin: 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+#top-bar h2::before {
+    width: 25px;
+    height: 25px;
+    content: '';
+    background-image: url('imgs/generic/compass.png');
+    background-size: cover;
+    margin: 0 15px;
+    align-self: center;
+    display: inline-block;
+}
+
+#content-wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden auto;
+    flex-flow: column nowrap; 
+    justify-content: flex-start;
+}
+
+#version {
+    cursor: help;
+    font-weight: 300;
+}
+
+#loader {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: white;
+    z-index: 3;
+    transition: 0.3s ease-in-out;
+}
+
+#loader.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.icon {
+    width: 25px;
+    height: 25px;
+}
+
+.centerlier {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    flex-flow: column nowrap;
+}
+
+.flx {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-flow: column nowrap;
+}
+
+.no-m-p {
+    margin: 0;
+    padding: 0;
+}
+
+.item {
+    width: 100%;
+    height: 50px;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+
+.item img:nth-child(1) {
+    margin-left: 15px;
+}
+
+#content-wrapper .item:last-child{
+    border-bottom: none !important;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple-animation 600ms linear;
+  background-color: rgba(255, 255, 255, 0.6);
+  pointer-events: none;
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Theme stuff */
+/* Loaders */
+.theme-glass .spinner {
+  width: 3em;
+  height: 3em;
+  cursor: not-allowed;
+  border-radius: 50%;
+  border: 2px solid #444;
+  box-shadow: -10px -10px 10px #6359f8, 0px -10px 10px 0px #9c32e2, 10px -10px 10px #f36896, 10px 0 10px #ff0b0b, 10px 10px 10px 0px#ff5500, 0 10px 10px 0px #ff9500, -10px 10px 10px 0px #ffb700;
+  animation: rot55 0.7s linear infinite;
+}
+
+.theme-glass .spinnerin {
+  border: 2px solid #444;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes rot55 {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* From Uiverse.io by bociKond */ 
+.theme-simple .loader {
+  width: 44.8px;
+  height: 44.8px;
+  color: #1e52ff;
+  position: relative;
+  background: radial-gradient(11.2px,currentColor 94%,#0000);
+}
+
+.theme-simple .loader:before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(10.08px at bottom right,#0000 94%,currentColor) top    left,
+          radial-gradient(10.08px at bottom left ,#0000 94%,currentColor) top    right,
+          radial-gradient(10.08px at top    right,#0000 94%,currentColor) bottom left,
+          radial-gradient(10.08px at top    left ,#0000 94%,currentColor) bottom right;
+  background-size: 22.4px 22.4px;
+  background-repeat: no-repeat;
+  animation: loader 1.5s infinite cubic-bezier(0.3,1,0,1);
+}
+
+@keyframes loader {
+  33% {
+    inset: -11.2px;
+    transform: rotate(0deg);
+  }
+
+  66% {
+    inset: -11.2px;
+    transform: rotate(90deg);
+  }
+
+  100% {
+    inset: 0;
+    transform: rotate(90deg);
+  }
+}
+
+body.theme-simple {
+    background: #aaa;
+}
+
+body.theme-glass {
+    background-image: url('imgs/glass-theme/background-white.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.theme-simple .txt {
+    font-family: "Roboto", sans-serif;
+}
+
+.theme-glass .txt {
+    font-family: "Montserrat", sans-serif;
+}
+
+.theme-simple .p-bg {
+    background: #eee;
+    border-radius: 10px;
+}
+
+.theme-glass .p-bg {
+    border-radius: 20px;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.4px);
+    -webkit-backdrop-filter: blur(7.4px);
+}
+
+.theme-simple .s-bg {
+    background: #dfdfdf;
+    transition: 0.1s ease-in-out;
+}
+
+.theme-simple .s-bg.clickable:hover {
+    background: #bcbcbc;
+}
+
+.theme-glass .s-bg {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(7.4px);
+    -webkit-backdrop-filter: blur(7.4px);
+}
+
+.theme-glass .s-bg.clickable:hover {
+    background: rgba(88, 88, 88, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+
+.theme-simple #top-bar {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: #fff;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+}
+
+.theme-glass #top-bar {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background: #fff;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+}
+
+.theme-glass #top-bar div {
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    position: absolute;
+    transition: 0.6s ease-in-out;
+}
+
+.theme-glass #top-bar div:nth-last-child(1) {
+    background: rgba(255, 0, 0, 0.8);
+    right: 25px;
+}
+
+.theme-glass #top-bar div:nth-last-child(2) {
+    background: rgba(255,255,0,0.8);
+    right: 65px;
+}
+
+.theme-glass #top-bar div:nth-last-child(3) {
+    background: rgba(0,255,0,0.8);
+    right: 105px;
+}
+
+.theme-glass #top-bar div:nth-last-child(1):hover {
+    background: rgba(99, 0, 0, 0.8);
+    right: 25px;
+}
+
+.theme-glass #top-bar div:nth-last-child(2):hover {
+    background: rgba(99,99,0,0.8);
+    right: 65px;
+}
+
+.theme-glass #top-bar div:nth-last-child(3):hover {
+    background: rgba(0,99,0,0.8);
+    right: 105px;
+}
+
+.theme-simple .p-tx {
+    color: black;
+}
+
+.theme-glass .p-tx {
+    color: black;
+}
+
+.theme-glass #version {
+    position: absolute;
+    top: 45px;
+    right: 0;
+    padding-left: 5px;
+    padding-top: 3px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    background: #ffffff;
+    border-bottom-left-radius: 5px;
+}
+
+.theme-simple #content-wrapper .item {
+    border-bottom: solid 1px gray;
+}
+
+.theme-simple .item:not(.hidden):nth-child(even) {
+    background-color: white;
+}
+
+.theme-glass .item:not(.hidden):nth-child(even) {
+    background: rgba(99, 99, 99, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+    #loader {
+        background: black;
+    }
+
+    body.theme-simple {
+        background: #111111;
+    }
+
+    body.theme-glass {
+        background-image: url('imgs/glass-theme/background-dark.webp');
+    }
+
+    .theme-simple .p-bg {
+        background: #212121;
+        border: solid 1px rgba(255,255,255,0.2);
+    }
+
+    .theme-glass .p-bg {
+        /* From https://css.glass */
+        background: rgba(0, 0, 0, 0.85);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(7.4px);
+        border: solid 1px rgba(255,255,255,0.2);
+        -webkit-backdrop-filter: blur(7.4px);
+    }
+
+    .theme-simple #top-bar {
+        background: #333;
+        border-bottom: solid 1px rgba(255,255,255, 0.4);
+    }
+
+    .theme-simple .p-tx {
+        color: white;
+    }
+
+    .theme-glass .p-tx {
+        color: white;
+    }
+
+    .theme-glass #top-bar {
+        background: #222;
+        border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+    }
+
+    .theme-glass #version {
+        background: #222;
+    }
+
+    .theme-simple .s-bg {
+        background: #2f2f2f;
+        transition: 0.1s ease-in-out;
+    }
+
+    .theme-simple .s-bg.clickable:hover {
+        background: #555 !important;
+    }
+
+    .theme-glass .s-bg {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(7.4px);
+        -webkit-backdrop-filter: blur(7.4px);
+    }
+
+    .theme-glass .s-bg.clickable:hover {
+        background: rgba(255, 255, 255, 0.4) !important;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .theme-simple #content-wrapper .item:not(.hidden):nth-child(even) {
+        background-color: #3f3f3f;
+    }
+
+    .theme-glass #content-wrapper .item:not(.hidden):nth-child(even) {
+        background: rgba(255, 255, 255, 0.2);
+    }
+}
+
+@media (max-width: 1100px) {
+    #main-window {
+        width: 95%;
+        height: 95%;
+    }
+}
+
+@media (max-width: 400px) {
+    .theme-glass #top-bar div {
+        opacity: 0;
+    }
+
+    #top-bar h2::before {
+        display: none;
+    }
+   
+    #top-bar h2 {
+        margin-left: 10px;
+    }
+}

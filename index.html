@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects Hub</title>
-    <link href="list-system/style.css" rel="stylesheet">
-    <link rel="icon" type="image/png" href="list-system/icons/HubIcon.png">
+    <title id="tit">List system</title>
+
+    <link rel="stylesheet" href="list-source/list-system.css">
+    <link rel="icon" type="image/png" href="list-source/imgs/generic/compass.png">
 
     <meta name="description" content="A simple and organized file hub. Access your files anytime, anywhere.">
 
@@ -23,78 +24,29 @@
     <meta name="twitter:description" content="This site uses Mr-Right-Dev's File Hub, A simple and organized file hub. Access your files anytime, anywhere.">
     <meta name="twitter:image" content="https://diego-freitag.netlify.app/list-system\icons\HubIcon.png">
 </head>
-<body>
-    <div id="window">
-        <div class="list">
-            <button class="item folder" folded="true">
-                <img src="list-system/icons/folder-white.svg" class="only-on-dark folder-icon">
-                <img src="list-system/icons/folder-dark.svg" class="only-on-light folder-icon">
-                Calculadora
-                <img src="list-system/icons/down-white.svg" class="only-on-dark expand-icon folded">
-                <img src="list-system/icons/down-dark.svg" class="only-on-light expand-icon folded">
-            </button>
-            <button class="item child hidden" link="/calculadora/index.html">
-                <img src="list-system/icons/file-white.svg" class="only-on-dark folder-icon">
-                <img src="list-system/icons/file-dark.svg" class="only-on-light folder-icon">
-                Index.html
-            </button>
+<body class="centerlier theme-simple">
+    <div id="loader" class="flx">
+        <div class="spinner">
+            <div class="spinnerin"></div>
         </div>
-        <div class="list">
-            <button class="item folder" folded="true">
-                <img src="list-system/icons/folder-white.svg" class="only-on-dark folder-icon">
-                <img src="list-system/icons/folder-dark.svg" class="only-on-light folder-icon">
-                Landing-page
-                <img src="list-system/icons/down-white.svg" class="only-on-dark expand-icon folded">
-                <img src="list-system/icons/down-dark.svg" class="only-on-light expand-icon folded">
-            </button>
-            <button class="item child hidden" link="/lading-page/src/lading.html">
-                <img src="list-system/icons/file-white.svg" class="only-on-dark folder-icon">
-                <img src="list-system/icons/file-dark.svg" class="only-on-light folder-icon">
-                Index.html
-            </button>
+        <div class="loader"></div>
+        <h4 class="txt p-tx" id="loading-context">Reading assets...</h4>
+    </div>
+    <div id="main-window" class="p-bg bx-shadow flx" style="flex-flow: column nowrap; justify-content: flex-start;">
+        <div id="top-bar" class="flx" style="flex-flow: row nowrap; justify-content: flex-start;">
+            <h2 class="p-tx txt" id="root">/media</h2>
+            <!-- glass-mode "mac button" -->
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
-        <div class="list">
-            <button class="item folder" folded="true">
-                <img src="list-system/icons/folder-white.svg" class="only-on-dark folder-icon">
-                <img src="list-system/icons/folder-dark.svg" class="only-on-light folder-icon">
-                Facebook
-                <img src="list-system/icons/down-white.svg" class="only-on-dark expand-icon folded">
-                <img src="list-system/icons/down-dark.svg" class="only-on-light expand-icon folded">
-            </button>
-            <button class="item child hidden" link="/register-page/index.html">
-                <img src="list-system/icons/file-white.svg" class="only-on-dark folder-icon">
-                <img src="list-system/icons/file-dark.svg" class="only-on-light folder-icon">
-                Index.html
-            </button>
-        </div>
-        <div class="list">
-            <button class="item folder" folded="true">
-                <img src="list-system/icons/folder-white.svg" class="only-on-dark folder-icon">
-                <img src="list-system/icons/folder-dark.svg" class="only-on-light folder-icon">
-                Trabalhos
-                <img src="list-system/icons/down-white.svg" class="only-on-dark expand-icon folded">
-                <img src="list-system/icons/down-dark.svg" class="only-on-light expand-icon folded">
-            </button>
-            <div class="list">
-                <button class="item folder child hidden" folded="true">
-                    <img src="list-system/icons/folder-white.svg" class="only-on-dark folder-icon">
-                    <img src="list-system/icons/folder-dark.svg" class="only-on-light folder-icon">
-                    2 de julho
-                    <img src="list-system/icons/down-white.svg" class="only-on-dark expand-icon folded">
-                    <img src="list-system/icons/down-dark.svg" class="only-on-light expand-icon folded">
-                </button>
-                <button class="item child child2" link="/trabalhos/dia2dejul/index.html">
-                    <img src="list-system/icons/file-white.svg" class="only-on-dark folder-icon">
-                    <img src="list-system/icons/file-dark.svg" class="only-on-light folder-icon">
-                    Index.html
-                </button>
-            </div>
+        <div id="content-wrapper" class="flx">
             
         </div>
+        <h5 id="version" class="txt p-tx no-m-p" title="© 2025 Mr-Right-Dev. All rights reserved.">v1.0.2</h5>
     </div>
-    <h5 class="version hidden">v2.3.1</h5>
-    <h5 class="copyrights">© 2025 Mr-Right-Dev. Todos os direitos reservados.</h5>
 
-    <script src="list-system/main.js"></script>
+    <script src="list-source/Settings.js"></script>
+    <script src="list-source/main.js"></script>
 </body>
 </html>
