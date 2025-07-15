@@ -333,13 +333,14 @@ body.theme-glass {
     border-bottom: solid 1px gray;
 }
 
-.theme-simple .item:not(.hidden):nth-child(even) {
+.theme-simple .item.even {
     background-color: white;
 }
 
-.theme-glass .item:not(.hidden):nth-child(even) {
+.theme-glass .item.even {
     background: rgba(99, 99, 99, 0.1);
 }
+
 
 @media (prefers-color-scheme: dark) {
     #loader {
@@ -410,11 +411,11 @@ body.theme-glass {
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     }
 
-    .theme-simple #content-wrapper .item:not(.hidden):nth-child(even) {
+    .theme-simple .item.even {
         background-color: #3f3f3f;
     }
 
-    .theme-glass #content-wrapper .item:not(.hidden):nth-child(even) {
+    .theme-glass .item.even {
         background: rgba(255, 255, 255, 0.2);
     }
 }
