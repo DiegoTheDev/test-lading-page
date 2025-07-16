@@ -149,9 +149,6 @@ function inject(itemObj, parentKey, depth, currentKey) {
                     document.location.href = itemObj.href;
                 }, 1000);
 
-                setTimeout(() => {
-                    loadComplete();
-                });
             }, 100);
         } else {
             document.location.href = itemObj.href;
