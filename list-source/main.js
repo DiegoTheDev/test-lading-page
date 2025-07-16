@@ -168,10 +168,13 @@ function parse(arr, parentKey = "root", depth = 0) {
     }
 }
 
-if (loaded) {
-    window.addEventListener('popstate', function(event) {
-    loadComplete();
-    })
+if (localSettings.fakeLoading) {
+    window.addEventListener("pageshow", function(event) {
+        if (event.persisted) {
+            // Página voltou do cache, forçar reload
+            window.location.reload();
+        }
+    });
 }
 
 function load() {
