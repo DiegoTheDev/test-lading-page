@@ -67,13 +67,23 @@ var setts = {
                 "items": [
                     {
                         "type": "item",
-                        "name": "Css aleatorio",
-                        "href": "projetos-pessoais/ladingpage/index.css"
+                        "name": "Lading page v2",
+                        "href": "projetos-pessoais/ladingpage/index.html"
                     },
                     {
                         "type": "item",
                         "name": "Listagem antiga",
                         "href": "index-old.html"
+                    },
+                    {
+                        "type": "item",
+                        "name": "Listagem antiga - css",
+                        "href": "list-system/style.css"
+                    },
+                    {
+                        "type": "item",
+                        "name": "Listagem antiga - js",
+                        "href": "list-system/main.js"
                     }
                 ]
             }
