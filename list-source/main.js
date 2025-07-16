@@ -13,6 +13,7 @@ const htmlInject = `<div class="folder item s-bg clickable flx" style="justify-c
 </div>`;
 
 // Set theme
+let loaded = false;
 const body = document.querySelector("body");
 const load_ctx = document.getElementById("loading-context");
 const wrapper = document.getElementById("content-wrapper");
@@ -147,6 +148,10 @@ function inject(itemObj, parentKey, depth, currentKey) {
                 setTimeout(() => {
                     document.location.href = itemObj.href;
                 }, 1000);
+
+                setTimeout(() => {
+                    loadComplete();
+                });
             }, 100);
         } else {
             document.location.href = itemObj.href;
@@ -166,12 +171,19 @@ function parse(arr, parentKey = "root", depth = 0) {
     }
 }
 
+if (loaded) {
+    window.addEventListener('popstate', function(event) {
+    loadComplete();
+    })
+}
+
 function load() {
     load_ctx.innerHTML = `Injecting html (${totalLoaded}/${totalFiles})`;
     parse(localSettings.files);
     alternateItemColors();
     load_ctx.innerHTML = "Injecting complete.";
     setTimeout(loadComplete, 100);
+    loaded = true;
 }
 
 if (localSettings.fakeLoading) {
@@ -179,3 +191,4 @@ if (localSettings.fakeLoading) {
 } else {
     load();
 }
+
