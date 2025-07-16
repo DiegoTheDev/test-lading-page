@@ -44,7 +44,7 @@ h5 {
     border-bottom: solid light-dark(rgba(0,0,0,0.3), rgba(255,255,255,0.3)) 1px !important;
     transition: 0.1s ease-out;
     opacity: 0;
-    overflow: hidden;
+     overflow-y: auto;
 }
 
 .list:nth-child(even) .item:not(.child):nth-child(1) {

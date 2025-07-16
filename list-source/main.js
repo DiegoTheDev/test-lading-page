@@ -1,3 +1,5 @@
+// Made by @Mr-Right-Dev in Github.
+
 let localSettings = setts;
 const parser = new DOMParser();
 
@@ -68,6 +70,12 @@ function getFileIcon(ext) {
 }
 
 function connectRipple(el) {
+    const fix = document.createElement("div");
+    fix.classList.add("fix");
+    const fix2 = document.createElement("div");
+    fix.appendChild(fix2);
+    el.appendChild(fix);
+
     el.addEventListener('click', e => {
         const circle = document.createElement('span');
         circle.classList.add('ripple');
@@ -78,7 +86,7 @@ function connectRipple(el) {
         circle.style.left = `${e.clientX - rect.left - size / 2}px`;
         circle.style.top = `${e.clientY - rect.top - size / 2}px`;
 
-        el.appendChild(circle);
+        fix2.appendChild(circle);
         setTimeout(() => circle.remove(), 600);
     });
 }
@@ -191,4 +199,3 @@ if (localSettings.fakeLoading) {
 } else {
     load();
 }
-

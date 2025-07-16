@@ -84,8 +84,13 @@ var setts = {
                         "type": "item",
                         "name": "Listagem antiga - js",
                         "href": "list-system/main.js"
+                    },
+                    {
+                        "type": "item",
+                        "name": "Listagem Stress test",
+                        "href": "list-source/list-stress.html"
                     }
                 ]
             }
         ]
-};
+}; 
