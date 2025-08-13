@@ -41,6 +41,11 @@ var setts = {
                                 "type": "item",
                                 "name": "2/6",
                                 "href": "trabalhos/dia2dejul/index.html"
+                            },
+                             {
+                                "type": "item",
+                                "name": "API test",
+                                "href": "trabalhos/api_pub/api_test.html"
                             }
                         ]
                     },
