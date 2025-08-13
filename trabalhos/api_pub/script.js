@@ -66,10 +66,10 @@ async function inject() {
         for (let i = 0; i < list.length; i++) {
             spawn(list[i]);
         }
-        
+        // slk mt organizado
         document.getElementById("loader").classList.remove('active');
         setTimeout(() => {
-            for (let i = 0; i < parsedDom.length; i++) {
+            for (let i = 0; i < parsedDom.length; i++) { // loading fake
                  let temp = parsedDom[i];
                 setTimeout(() => {
                    temp.classList.remove("hidden");
@@ -106,17 +106,18 @@ async function inject() {
                         if (num > 100) {
                             txt.innerHTML += "<br>(GOD)";
                             txt.style.color = "#ffbb00ff";
-                            temp.style.background = "#fde49eff";
+                            temp.style.border = "1px solidrgb(255, 198, 43)";
+                            temp.style.background = "linear-gradient(0deg, #fde49eff, #fde49eff, white, white)";
                             temp.style.boxshadow="rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;"
                         } else if (num > 80) {
                             txt.style.color = "#8A2BE2";
-                            temp.style.background = "#c098e6ff";
+                            temp.style.background = "linear-gradient(0deg, #c098e6ff, white, white, white)";
                         } else if (num > 50) {
-                            temp.style.background = "#9ffaa7ff";
+                            temp.style.background = "linear-gradient(0deg, #9ffaa7ff, white, white, white)";
                              txt.style.color = "green";
                         } else {
                             txt.style.color = "red";
-                            temp.style.background = "#fa9f9fff";
+                            temp.style.background = "linear-gradient(0deg, #fa9f9fff, white, white, white)";
                         }
                         txt.innerHTML += `<br>[${num.toFixed(2)}]`;
                     }, Math.random()*2000)
