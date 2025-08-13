@@ -63,7 +63,8 @@ button {
 
 .card {
     width: 150px;
-    height: 270px;
+    height: auto;
+    min-height: 200px;
     background: white;
     display: flex;
     justify-content: flex-start;

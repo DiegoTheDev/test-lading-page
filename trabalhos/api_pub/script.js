@@ -36,7 +36,7 @@ async function inject() {
    setTimeout(async () => {
      try {
         
-        const request = fetch(`https://dog.ceo/api/breeds/image/random/40`);
+        const request = fetch(`https://dog.ceo/api/breeds/image/random/50`);
         const responce = await (await request).json();
         console.log(responce);
 
@@ -88,13 +88,18 @@ async function inject() {
                         let txt = temp.querySelector(".dog-name");
                         if (num > 100) {
                             txt.innerHTML += "<br>(GOD)";
-                            txt.style.color = "#8A2BE2";
+                            txt.style.color = "#ffbb00ff";
+                            temp.style.background = "#fde49eff";
+                            temp.style.boxshadow="rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;"
                         } else if (num > 80) {
                             txt.style.color = "#8A2BE2";
+                            temp.style.background = "#c098e6ff";
                         } else if (num > 50) {
+                            temp.style.background = "#9ffaa7ff";
                              txt.style.color = "green";
                         } else {
                             txt.style.color = "red";
+                            temp.style.background = "#fa9f9fff";
                         }
                         txt.innerHTML += `<br>[${num.toFixed(2)}]`;
                     }, Math.random()*2000)
