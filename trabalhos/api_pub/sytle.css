@@ -8,6 +8,15 @@ body {
     position: relative;
 }
 
+button {
+  width: 100px;
+  height: 30px;
+  background: #0053c0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
 #loader {
     transition: 1s ease-in;
     opacity: 0;
@@ -54,7 +63,7 @@ body {
 
 .card {
     width: 150px;
-    height: 200px;
+    height: 270px;
     background: white;
     display: flex;
     justify-content: flex-start;
@@ -67,6 +76,18 @@ body {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     animation: fadeCard 0.5s ease-in-out forwards;
     margin-right: 5px;
+}
+
+.card .dog-name {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 18px;
+  margin: 8px 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 300;
 }
 
 .card.hidden {
