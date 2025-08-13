@@ -68,7 +68,7 @@ var setts = {
             },
             {
                 "type": "folder",
-                "name": "Pessoais",
+                "name": "Pessoal",
                 "items": [
                     {
                         "type": "item",
