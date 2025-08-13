@@ -11,10 +11,17 @@ body {
 button {
   width: 100px;
   height: 30px;
-  background: #0053c0;
+  background: #003274;
   color: white;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+}
+
+button:hover {
+  scale: 1.1;
+  background: #0053c0;
 }
 
 #loader {
@@ -30,7 +37,7 @@ button {
     height: 100%;
     width: 100%;
     background: white;
-    z-index: 2;
+    z-index: 4;
     top: 0;
     left: 0;
     pointer-events: none;
@@ -49,6 +56,8 @@ button {
     align-items: center;
     flex-flow: row wrap;
     margin: 10px 0;
+    position: fixed;
+    z-index: 3;
 }
 
 #galery {
@@ -71,12 +80,23 @@ button {
     align-content: center;
     align-items: center;
     flex-flow: column nowrap;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     border-radius: 5px;
     opacity: 0;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     animation: fadeCard 0.5s ease-in-out forwards;
-    margin-right: 5px;
+    margin-right: 8px;
+    transition: 0.4s ease-in-out;
+}
+
+.card:hover {
+  scale: 1.1;
+  z-index: 2;
+  border: 1px solid white;
+}
+
+.card * {
+  pointer-events: none;
 }
 
 .card .dog-name {

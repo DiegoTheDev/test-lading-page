@@ -31,11 +31,11 @@ var setts = {
     "files": [
             {
                 "type": "folder",
-                "name": "Trabalhos da escola",
+                "name": "College Work",
                 "items": [
                             {
                         "type": "folder",
-                        "name": "Pequenos",
+                        "name": "Smalls",
                         "items": [
                             {
                                 "type": "item",
@@ -44,14 +44,14 @@ var setts = {
                             },
                              {
                                 "type": "item",
-                                "name": "API test",
+                                "name": "Public API test",
                                 "href": "trabalhos/api_pub/api_test.html"
                             }
                         ]
                     },
                     {
                         "type": "item",
-                        "name": "Calculadora",
+                        "name": "Calculator",
                         "href": "calculadora/index.html"
                     },
                     {
@@ -77,23 +77,18 @@ var setts = {
                     },
                     {
                         "type": "item",
-                        "name": "Listagem antiga",
+                        "name": "Old list",
                         "href": "index-old.html"
                     },
                     {
                         "type": "item",
-                        "name": "Listagem antiga - css",
+                        "name": "Old list - css",
                         "href": "list-system/style.css"
                     },
                     {
                         "type": "item",
-                        "name": "Listagem antiga - js",
+                        "name": "Old list - js",
                         "href": "list-system/main.js"
-                    },
-                    {
-                        "type": "item",
-                        "name": "Listagem Stress test",
-                        "href": "list-source/list-stress.html"
                     }
                 ]
             }

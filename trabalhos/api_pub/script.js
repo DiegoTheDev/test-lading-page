@@ -1,19 +1,33 @@
 var parsedDom = [];
+let gambling = false;
+
+function capitalizeFirstLetter(val) {
+    return String(val).charAt(0).toUpperCase() + String(val).slice(1);
+}
 
 function spawn(imgSrc) {
     let breed = imgSrc.split("/")[4]
-    let name = breed.replaceAll("-", " ");
+    let name = breed.split("-");
+    let nameStr = "";
+    
+    for (let i = 0; i < name.length; i++) { 
+        if (name.length > 1 && i < name.length) {
+            nameStr += " "
+        }
+        nameStr += capitalizeFirstLetter(name[i]);
+    }
+    
     let injectionHtml = ` <div class="card hidden">
-            <h3 class="dog-name">${name}</h3>
+            <h3 class="dog-name">${nameStr}</h3>
             <img src="${imgSrc}" class="loading">
             <div class="elmt">
-                <h3>Attaque: </h3>
+                <h3>Attack: </h3>
                 <div class="placeholder active">
                     <h3></h3>
                 </div>
             </div>
             <div class="elmt">
-                <h3>Defesa: </h3>
+                <h3>Defense: </h3>
                 <div class="placeholder active">
                     <h3></h3>
                 </div>
@@ -31,6 +45,9 @@ function spawn(imgSrc) {
 }
 
 async function inject() {
+    if (gambling) 
+        return;
+    gambling = true;
     document.getElementById("galery").innerHTML = "";
     document.getElementById("loader").classList.add('active');
    setTimeout(async () => {
@@ -106,6 +123,7 @@ async function inject() {
                 }, i*100)
             }
         }, 800);
+        setTimeout(() => gambling = false, (2000+((parsedDom.length-1)*100)+800));
     } catch (e) {
         console.error(e);
     }
