@@ -7,13 +7,31 @@
     <title>API de deputados</title>
 </head>
 <body>
-    <div class="main-header">
+    <header class="main-header">
         <input type="text" placeholder="Pesquisar..." id="search-inpt">
         <div class="icon"></div>
+    </header>
+    <div class="loader disabled" id="loader">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
     </div>
-    <div id="main">
-       
-    </div>
+    <section id="main">
+       <!-- html injection here -->
+    </section>
+    <footer class="pager">
+        <button id="back">Voltar</button>
+        <p id="page">1</p>
+        <button id="next">Proximo</button>
+    </footer>
+    <section>
+
+    </section>
     <script src="main.js"></script>
 </body>
 </html>

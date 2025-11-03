@@ -16,7 +16,7 @@ const html = ` <div class="card placeholder">
         </div>`;
 
 const main = document.getElementById("main");
-
+const loader = document.getElementById("loader");
 
 function loadCard(data) {
     const parser = new DOMParser();
@@ -39,9 +39,42 @@ function clear() {
 }
 
 const inpt = document.getElementById("search-inpt");
+var links = [];
+let page = 1;
+let loading = false;
 
-function load() {
+async function process(data) {
+    if (data.status != 200) {
+        document.getElementById("search-inpt").value = "Falha na request";
+        return;
+    }
+
+    let json;
+    try {
+        json = await data.json();
+    } catch (e) {
+        document.getElementById("search-inpt").value = "Falha na request";
+        console.error(e);
+        return;
+    }
+
+    let dados = json.dados;
+    for (let i = 0; i < dados.length; i++) {
+        loadCard(dados[i]);
+    }
+
+    links = json.links;
+    document.getElementById("page").innerHTML = page;
+}
+
+async function load() {
+    if (loading) {
+        return;
+    }
+    loading = true;
+
     let search = inpt.value;
+    loader.classList.remove("disabled");
     const params = {
         nome: search,
         ordem: 'ASC',
@@ -52,27 +85,41 @@ function load() {
     clear();
 
     const queryString = new URLSearchParams(params).toString();
-    fetch(`https://dadosabertos.camara.leg.br/api/v2/deputados?${queryString}`).then(async (data) => {
-        if (data.status != 200) {
-            document.getElementById("search-inpt").value = "Falha na request";
-            return;
-        }
+    await fetch(`https://dadosabertos.camara.leg.br/api/v2/deputados?${queryString}`).then(async (data) => await process(data));
 
-        let json;
-        try {
-            json = await data.json();
-        } catch (e) {
-            document.getElementById("search-inpt").value = "Falha na request";
-            console.error(e);
-            return;
-        }
-
-        let dados = json.dados;
-        for (let i = 0; i < dados.length; i++) {
-            loadCard(dados[i]);
-        }
-    });
+    setTimeout(() => {loader.classList.add("disabled");}, 500);
+    loading = false;
 }
+
+document.getElementById("next").addEventListener("click", async () => {
+    if (loading) {
+        return;
+    }
+    loading = true;
+
+    loader.classList.remove("disabled");
+     clear();
+    page++;
+    await fetch(links[1].href).then(async (data) => await process(data));
+
+    setTimeout(() => {loader.classList.add("disabled");}, 500);
+    loading = false;
+});
+
+document.getElementById("back").addEventListener("click", async () => {
+    if (loading) {
+        return;
+    }
+    loading = true;
+
+    loader.classList.remove("disabled");
+     clear();
+    page--;
+    await fetch(links[3].href).then(async (data) => await process(data));
+
+    setTimeout(() => {loader.classList.add("disabled");}, 500);
+    loading = false;
+});
 
 inpt.addEventListener('keyup', function(event) {
     // Check if the pressed key is the Enter key

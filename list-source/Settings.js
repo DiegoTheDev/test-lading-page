@@ -63,6 +63,11 @@ var setts = {
                         "type": "item",
                         "name": "Register Facebook",
                         "href": "register-page/index.html"
+                    },
+                    {
+                        "type": "item",
+                        "name": "Api depu",
+                        "href": "trabalhos/API_dep/index.html"
                     }
                 ]
             },
