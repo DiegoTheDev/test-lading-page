@@ -1,4 +1,5 @@
-const html = ` <div class="card placeholder">
+const html = ` <div class="card placeholder hover-card">
+            <div class="gloss"></div>
             <div class="background">
                 <div class="loading" style="width: 100%; height: 100%;"></div>
                 <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png" class="picture">
@@ -17,6 +18,8 @@ const html = ` <div class="card placeholder">
 
 const main = document.getElementById("main");
 const loader = document.getElementById("loader");
+
+
 
 function loadCard(data) {
     const parser = new DOMParser();
@@ -86,6 +89,42 @@ async function load() {
 
     const queryString = new URLSearchParams(params).toString();
     await fetch(`https://dadosabertos.camara.leg.br/api/v2/deputados?${queryString}`).then(async (data) => await process(data));
+
+    document.querySelectorAll(".hover-card").forEach((card) => {
+    const gloss = card.querySelector(".gloss");
+    card.addEventListener("mousemove", (event) => {
+        const pointX = event.clientX;
+        const pointY = event.clientY;
+
+        const cardRect = card.getBoundingClientRect();
+
+        const halfHeight = card.offsetHeight / 2;
+        const halfWidth = card.offsetWidth / 2;
+
+        const cardCenterX = cardRect.left + halfWidth;
+        const carcCenterY = cardRect.top + halfHeight;
+
+        const deltaX = pointX - cardCenterX;
+        const deltaY = pointY - carcCenterY;
+
+        const rx = deltaY / halfHeight;
+        const ry = deltaX / halfWidth;
+
+        const distaceToCenter = Math.sqrt(Math.pow(deltaX, 2) + Math.pow(deltaY, 2));
+        const maxDist = Math.max(halfHeight, halfWidth);
+        const deg = distaceToCenter * 10 / maxDist;
+
+        card.style.transform = `perspective(400px) rotate3D(${-rx}, ${ry}, 0, ${deg}deg)`;
+        gloss.style.transform = `translate(${-ry*100}%, ${-rx*100}%) scale(2.4)`;
+        gloss.style.opacity = distaceToCenter * 0.05 / maxDist;
+
+    });
+
+    card.addEventListener("mouseleave", () => {
+        card.style = null;
+        gloss.style.opacity = 0;
+    })
+});
 
     setTimeout(() => {loader.classList.add("disabled");}, 500);
     loading = false;
