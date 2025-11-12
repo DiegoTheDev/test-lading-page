@@ -1,315 +1,88 @@
-:root {
-    color-scheme: dark;
+@import url('https://fonts.googleapis.com/css2?family=Momo+Trust+Display&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: "Nunito", sans-serif;
 }
 
 body {
-    width: 100vw;
-    height: auto;
-    background-color: light-dark(#ddd, #111);
-    margin: 0;
-    padding: 0;
-}
-
-.top {
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    background: transparent;
-    background: linear-gradient(to right,rgb(41, 40, 46),rgb(12, 12, 14));
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 20px;
-    overflow: hidden;   
-}
-
-.top .stupid-stuff {
-    position: relative;
-    width: 100vw;
-    height: 30vh;
-    overflow: hidden;
-}
-
-.top .stupid-stuff .round {
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-
-.top .stupid-stuff .round::before {
-  width: 400px;
-  height: 400px;
-  content: "";
-  background: linear-gradient(to right,rgb(30, 30, 31),rgb(12, 12, 14));
-  position: absolute;
-  z-index: 1;
-  border-radius: 50%;
-  right: -10%;
-  top: -50%;
-}
-
-/* topbar */
-.topbar {
+  background-image: url('imgs/background.jpg');
+  height: 100vh;
+  background-size: cover;
   display: flex;
-  position: absolute;
-  top: 0;
-  left: 0;
-  justify-content: flex-start;
   align-items: center;
-  align-content: center;
-  flex-flow: row nowrap;
-  padding: 10px 5px;
-}
-
-.topbar * {
-  margin: 5px;
-}
-
-.topbar img {
-  width: 58px;
-  height: 58px;
-  border-radius: 10px;
-  outline: none;
-  border: 1px white solid;
-}
-
-.topbar .subbar {
-  margin-left: 30px;
-  display: flex;
   justify-content: flex-start;
-  align-items: center;
-  align-content: center;
-  flex-flow: row nowrap;
-  background: rgb(12, 12, 14);
-  border-radius: 15px;
-  overflow: hidden;
+  flex-flow: column nowrap;
+}
+
+.main-title {
+  margin-top: 50px;
+  font-size: 50px;
+  font-weight: 100;
+}
+
+/* 🌈 The gradient text link */
+.main-title a {
+  font-family: "Momo Trust Display", sans-serif;
   position: relative;
-}
-
-.topbar .subbar * {
-  cursor: pointer;
-  margin: 5px 10px;
-}
-
-.topbar .subbar .input {
-  display: none;
-}
-
-.topbar .subbar .selection {
-  display: none;
-  position: absolute;
-  height: 100%;
-  width: calc(100% / 3);
-  z-index: 0;
-  left: 0;
-  top: 0;
-  box-shadow: 0 0 10px #956afa;
-  transition: .15s ease;
-  margin: 0 !important;
-}
-
-.topbar .subbar .label {
-  z-index: 1;
-  margin: 0;
-  padding: 20px 25px;
-}
-
-.topbar .subbar .label:has(input:checked) {
-  font-weight: bold;
-}
-
-.topbar .subbar .label:has(input:checked) ~ .selection {
-  background-color: #956afa;
   display: inline-block;
+  font-weight: 700;
+  font-size: 1.2em;
+
+  /* gradient for text */
+  background: linear-gradient(36deg, #46007c, #c276ff);
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+
+  /* animation */
+  animation: rotateGradient 10s linear infinite;
 }
 
-.topbar .subbar .label:nth-child(1):has(input:checked) ~ .selection {
-  transform: translateX(calc(300% * 0/3));
-}
-
-.topbar .subbar .label:nth-child(2):has(input:checked) ~ .selection {
-  transform: translateX(calc(300% * 1/3));
-}
-
-.topbar .subbar .label:nth-child(3):has(input:checked) ~.selection {
-  transform: translateX(calc(300% * 2/3));
-}
-
-.section.hidden {
-  display: none;
-}
-
-/* From Uiverse.io by kennyotsu */ 
-.card-text-roll {
-  background: transparent;
-  padding: 1rem 2rem;
-  border-radius: 1.25rem;
-}
-.card-text-roll p {
-    margin: 0;
-}
-
-.card-text-roll .loader-roll {
-  color: rgb(255,255,255);
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-size: 25px;
-  -webkit-box-sizing: content-box;
-  box-sizing: content-box;
-  height: 40px;
-  padding: 10px 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  border-radius: 8px;
-}
-
-.card-text-roll .words {
-  overflow: hidden;
-  position: relative;
-}
-.card-text-roll .words::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    var(--bg-color) 10%,
-    transparent 30%,
-    transparent 70%,
-    var(--bg-color) 90%
-  );
-  z-index: 20;
-}
-
-.card-text-roll .word {
-  display: block;
-  height: 100%;
-  padding-left: 6px;
-  color: #956afa;
-  animation: spin_4991 4s infinite;
-}
-
-@keyframes spin_4991 {
-  10% {
-    -webkit-transform: translateY(-102%);
-    transform: translateY(-102%);
+/* ⏳ Animate the gradient angle by shifting background-position */
+@keyframes rotateGradient {
+  0% {
+    background-position: 0% 50%;
   }
-
-  25% {
-    -webkit-transform: translateY(-100%);
-    transform: translateY(-100%);
-  }
-
-  35% {
-    -webkit-transform: translateY(-202%);
-    transform: translateY(-202%);
-  }
-
   50% {
-    -webkit-transform: translateY(-200%);
-    transform: translateY(-200%);
+    background-position: 100% 50%;
   }
-
-  60% {
-    -webkit-transform: translateY(-302%);
-    transform: translateY(-302%);
-  }
-
-  75% {
-    -webkit-transform: translateY(-300%);
-    transform: translateY(-300%);
-  }
-
-  85% {
-    -webkit-transform: translateY(-402%);
-    transform: translateY(-402%);
-  }
-
   100% {
-    -webkit-transform: translateY(-400%);
-    transform: translateY(-400%);
+    background-position: 0% 50%;
   }
 }
 
-/* loader */
-#loader {
+.sub-title {
+    margin-top: 50px;
+    font-size: 30px;
+    font-weight: 100;
+    position: relative;
+}
+
+.sub-title::before {
+    content: '';
     position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: light-dark(#ddd, #111);
-    top: 0;
-    left: 0;
-    display: flex;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
-    display: none;
-    z-index: 10;
+    background: white;
+    bottom: -2px;
+    height: 2px;
+    opacity: 0;
+    width: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: subtitle-fade 2s forwards cubic-bezier(0.23, 1, 0.320, 1);
 }
 
-/* From Uiverse.io by alexruix */ 
-.loader {
-  position: relative;
-  width: 120px;
-  height: 90px;
-  margin: 0 auto;
-}
+@keyframes subtitle-fade {
+    from {
+        width: 0%;
 
-.loader:before {
-  content: "";
-  position: absolute;
-  bottom: 30px;
-  left: 50px;
-  height: 30px;
-  width: 30px;
-  border-radius: 50%;
-  background: #2a459d;
-  animation: loading-bounce 0.5s ease-in-out infinite alternate;
-}
-
-.loader:after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 7px;
-  width: 45px;
-  border-radius: 4px;
-  box-shadow: 0 5px 0 #f2f2f2, -35px 50px 0 #f2f2f2, -70px 95px 0 #f2f2f2;
-  animation: loading-step 1s ease-in-out infinite;
-}
-
-@keyframes loading-bounce {
-  0% {
-    transform: scale(1, 0.7);
-  }
-
-  40% {
-    transform: scale(0.8, 1.2);
-  }
-
-  60% {
-    transform: scale(1, 1);
-  }
-
-  100% {
-    bottom: 140px;
-  }
-}
-
-@keyframes loading-step {
-  0% {
-    box-shadow: 0 10px 0 rgba(0, 0, 0, 0),
-            0 10px 0 #f2f2f2,
-            -35px 50px 0 #f2f2f2,
-            -70px 90px 0 #f2f2f2;
-  }
-
-  100% {
-    box-shadow: 0 10px 0 #f2f2f2,
-            -35px 50px 0 #f2f2f2,
-            -70px 90px 0 #f2f2f2,
-            -70px 90px 0 rgba(0, 0, 0, 0);
-  }
+    }
+    to {
+        width: 110%;
+        opacity: 1;
+    }
 }
