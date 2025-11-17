@@ -23,6 +23,37 @@ body {
   flex-flow: column nowrap;
 }
 
+.topbar {
+  backdrop-filter: blur(10px);
+  background-color: rgba(0,0,0,0.5);
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  align-content: center;
+  flex-flow: row nowrap;
+  position: relative;
+}
+
+.topbar h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.topbar .btn {
+  margin-left: 20px;
+  transition: 0.2s ease;
+  border: none;
+  background: transparent;
+}
+
+.topbar .btn:hover {
+  scale: 1.05;
+}
+
 .main-title {
   margin-top: 50px;
   font-size: 50px;
