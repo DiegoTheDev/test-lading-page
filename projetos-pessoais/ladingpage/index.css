@@ -113,6 +113,7 @@ body {
 
 .glass-card:nth-child(3) {
   animation-delay: 0.3s;
+  min-height: 342px;
 }
 
 
