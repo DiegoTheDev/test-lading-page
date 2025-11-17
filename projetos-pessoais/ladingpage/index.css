@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Momo+Trust+Display&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
+#cards {
+  width: 100%;
+  height: auto;
+  margin-top: 30px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -21,6 +27,17 @@ body {
   margin-top: 50px;
   font-size: 50px;
   font-weight: 100;
+}
+
+.center-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.flex-row {
+  flex-flow: row nowrap;
 }
 
 /* 🌈 The gradient text link */
@@ -48,41 +65,126 @@ body {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
 }
 
+.glass-effect {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(8.8px);
+  border: 1px solid rgba(255, 255, 255, 0.34);
+}
+
+.glass-effect:hover {
+   background: rgba(255, 255, 255, 0.01);
+}
+
+.glass-card { 
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: flex-start;
+  flex-flow: column nowrap;
+  padding: 10px;
+  min-width: 150px;
+  margin: 2px 5px;
+  opacity: 0;
+  transition: ease 1s;
+  animation: fadeInCard forwards 1s ease-out;
+}
+
+.glass-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.glass-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.glass-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+
+@keyframes fadeInCard {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.glass-card h1 {
+  font-size: 26px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+}
+
 .sub-title {
-    margin-top: 50px;
-    font-size: 30px;
-    font-weight: 100;
-    position: relative;
+  margin-top: 20px;
+  font-size: 30px;
+  font-weight: 100;
+  position: relative;
 }
 
 .sub-title::before {
-    content: '';
-    position: absolute;
-    background: white;
-    bottom: -2px;
-    height: 2px;
-    opacity: 0;
-    width: 0;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation: subtitle-fade 2s forwards cubic-bezier(0.23, 1, 0.320, 1);
+  content: '';
+  position: absolute;
+  background: white;
+  bottom: -2px;
+  height: 1px;
+  opacity: 0;
+  width: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: subtitle-fade 2s forwards cubic-bezier(0.23, 1, 0.320, 1);
 }
 
 @keyframes subtitle-fade {
-    from {
-        width: 0%;
+  from {
+    width: 0%;
 
-    }
-    to {
-        width: 110%;
-        opacity: 1;
-    }
+  }
+
+  to {
+    width: 110%;
+    opacity: 1;
+  }
+}
+
+.hover-card {
+  position: relative;
+  overflow: hidden;
+  transition: 1s ease !important;
+}
+
+.gloss {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, 
+    rgb(255,255,255) 0%,
+    rgba(255,255,255,0) 50%,
+    rgba(255,255,255,0) 100%
+    );
+
+    will-change: opacity;
+    transition: opacity 0.2s ease-out;
+    z-index: -1;
 }
