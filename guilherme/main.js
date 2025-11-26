@@ -1,4 +1,5 @@
 const imgContainer = document.getElementById("brotamento");
+const loader = document.querySelector(".loader");
 
 const ammountImgs = 3;
 
@@ -29,21 +30,26 @@ document.getElementById("btn").addEventListener("click", async () => {
     }
 
     onLoading = true;
-
+    loader.classList.add("visible");
     if (generated) {
         imgContainer.classList.add("hide");
+        
         setTimeout(async () => {
-            imgContainer.classList.remove("hide");
+            imgContainer.style.display = "none";
             await load();
             setTimeout(() => {
+                imgContainer.style.display = "flex";
+                imgContainer.classList.remove("hide");
                 onLoading = false;
-            }, 4000);
+                 loader.classList.remove("visible");
+            }, 2000);
         }, 3000);
         
     } else {
             await load();
                 setTimeout(() => {
                     onLoading = false;
+                    loader.classList.remove("visible");
                 }, 4000);
     }
     generated = true;
