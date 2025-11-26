@@ -226,8 +226,7 @@ body {
   position: relative;
   transition: all 0.3s ease-in-out;
   box-shadow: 0px 10px 20px rgba(255,255,255, 0.21);
-  padding-block: 0.5rem;
-  padding-inline: 1.25rem;
+  padding: 10px 20px;
   background-color: rgb(171 74 253);
   border-radius: 9999px;
   display: flex;
