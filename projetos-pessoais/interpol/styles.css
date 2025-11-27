@@ -1,7 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
     padding: 0;
     margin: 0;
     position: relative;
+     font-family: "Roboto", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text);
+}
+
+button {
+    cursor: pointer;
+}
+
+
+body.light .shadow {
+    box-shadow: 0px 4px 4px #00000030, 0px 12px 12px #00000015;
+}
+
+.shadow {
+    box-shadow: 0px 4px 4px #2c2c2c30, 0px 12px 12px #27272715;
 }
 
 body {
@@ -11,10 +31,81 @@ body {
     align-items: center;
     align-content: center;
     justify-content: center;
+    background: var(--bg-dark);
 }
 
 .main-div {
+    width: 70%;
+    max-width: 700px;
+    background: var(--bg-dark);
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-flow: column nowrap;
+    border-radius: 15px;
+    border: var(--border-muted) solid 1px;
+    overflow: hidden;
+}
+
+.header {
+    width: 100%;
+    height: auto;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    flex-flow: column nowrap;
+    background: var(--bg);
+    position: absolute;
+    top: 0;
+    padding-bottom: 100px;
+}
+
+.card {
     width: 80%;
-    padding: 5px 30px;
-    background: rgba(255,255,255,0.1);
+    height: 70vh;
+    background: var(--bg-dark);
+    margin: 130px 0;
+    margin-bottom: 50px;
+    border-radius: 8px;
+    border: var(--border) 1px solid;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-start;
+    flex-flow: column nowrap;
+}
+
+#tubnail {
+    width: 80px;
+    height: 80px;
+    border: none;
+    border-radius: 10px;
+    background: var(--bg-light);
+    outline: none;
+    border: 1px solid var(--border);
+}
+
+.img-carosell {
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.img-carosell button {
+    background: transparent;
+    outline: none;
+    border: none;
+    color: var(--text);
+    margin: 0 10px;
+    font-size: 30px;
+    transition: 0.2s;
+}
+
+.img-carosell button:hover {
+    font-size: 33px;
 }
